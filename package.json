@@ -15,5 +15,8 @@
     "url": "https://github.com/varinmehta/nodejs-practice/issues"
   },
   "homepage": "https://github.com/varinmehta/nodejs-practice#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "url": "^0.11.4"
+  }
 }
