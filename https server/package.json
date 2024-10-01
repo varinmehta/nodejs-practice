@@ -1,0 +1,19 @@
+{
+  "name": "https-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/varinmehta/nodejs-practice.git"
+  },
+  "author": "Varin Mehta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/varinmehta/nodejs-practice/issues"
+  },
+  "homepage": "https://github.com/varinmehta/nodejs-practice#readme",
+  "description": ""
+}
