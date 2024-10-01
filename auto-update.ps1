@@ -15,10 +15,16 @@ $action = {
     # Navigate to the project directory
     Set-Location $using:projectPath
 
-    # Stage changes, commit, and push
+    # Stage changes
     git add .
-    git commit -m "Auto-update on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
-    git push origin master # Change 'master' to 'main' if your default branch is 'main'
+
+    # Check if there are any changes to commit
+    $status = git status --porcelain
+    if (-not [string]::IsNullOrEmpty($status)) {
+        # Commit and push changes
+        git commit -m "Auto-update on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+        git push origin master # Change 'master' to 'main' if your default branch is 'main'
+    }
 }
 
 # Register the event handler for file changes

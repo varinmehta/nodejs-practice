@@ -12,4 +12,4 @@ const fs = require("fs");
 //     }
 // })
 
-fs.appendFileSync("./test.txt", new Date().getTime().toLocaleString());
+fs.appendFileSync("./test.txt", new Date().getDate().toLocaleString());
