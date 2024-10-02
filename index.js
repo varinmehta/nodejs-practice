@@ -13,9 +13,5 @@ app.get("/about", (req, res) => {
         "Hello " + req.query.name + ", your age is: " + req.query.age
     );
 });
-const server = http.createServer(app);
 
-server.listen(8000, (err, res) => {
-    if (err) throw err;
-    console.log("Server is running on port 8000");
-});
+app.listen(8080, () => console.log("Server is running on port 8000"));
