@@ -9,27 +9,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-    return res.send("Hello from About page!");
+    return res.send(
+        "Hello " + req.query.name + ", your age is: " + req.query.age
+    );
 });
-const server = http.createServer((req, res) => {
-    if (req.url === "/favicon.ico") return res.end();
-    const log = `${Date.now()}: ${req.method} ${req.url} New Req Received\n`;
-    const myUrl = url.parse(req.url, true);
-    console.log(myUrl);
-    fs.appendFile("log.txt", log, (err, data) => {
-        switch (myUrl.pathname) {
-            case "/":
-                res.end("HomePage");
-                break;
-            case "/about":
-                const username = myUrl.query.mname;
-                res.end(`Hi, ${username}`);
-                break;
-            default:
-                res.end("404 Not Found");
-        }
-    });
-});
+const server = http.createServer(app);
 
 server.listen(8000, (err, res) => {
     if (err) throw err;
